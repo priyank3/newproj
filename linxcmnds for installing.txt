@@ -1,0 +1,207 @@
+         Linux command to install appache tomcat server
+     
+sudo su -         (to switch to super user/rootuser)
+sudo yum update    (yellow dog modifier)
+yum install java
+yum install httpd   (to install appache server)
+service httpd start
+service httpd status
+chkconfig httpd on                                            (continue from below)
+============================================================================================
+      Linux commands to create and write an html file (to write any code in html vi editor)
+
+
+vi /var/www/html/index.html
+============================================================================================
+        AWSCLI(command line Interface) in RHEL (tecmint.com)
+
+
+yum install wget     (webget)
+## RHEL/CentOS 7 64-Bit ##
+# wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
+# rpm -ivh epel-release-7-10.noarch.rpm
+
+
+## RHEL/CentOS 6 32-Bit ##
+# wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+# rpm -ivh epel-release-6-8.noarch.rpm
+## RHEL/CentOS 6 64-Bit ##
+# wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+# rpm -ivh epel-release-6-8.noarch.rpm
+
+
+
+sudo yum install pip
+yum install python-pip
+sudo pip install awscli
+aws configure
+aws iam help
+=============================================================================================
+              How to install Jenkinsin RHEL?
+
+yum update
+yum install java
+yum install wget
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key            (Get Jenkins repository key)
+yum install jenkins
+service jenkins start
+chkconfig jenkins on
+
+or
+
+
+    1  sudo yum update
+    2  yum install java
+    3  yum install httpd
+    4  service httpd start
+    5  service httpd status
+    6  chkconfig httpd on
+    7  yum install wget
+    8  yum update
+    9  wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+   10  rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key
+   11  yum install jenkins
+   12  service jenkins start
+   13  service jenkins status
+   14  chkconfig jenkins on
+   15  vi /var/lib/jenkins/secrets/initialAdminPassword
+==================================================================================================================
+                                Git commands
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+
+
+    1  git init
+    2  cd ~/.ssh
+    3  ssh-keygen
+    4  cat ~/.ssh/id_rsa.pub
+    5  ssh -T git@github.com
+    6  git config --global user.name "pyk1"
+    7  git config --global user.email "arrav7@gmail.com"
+    8  git init mygit1
+    9  git clone "git@github.com:pyk1/Mygit.git"
+   10  cd mygit1
+   11  touch index1.html
+   12  vi index.html
+
+   13  git add index.html
+   14  git commit -a -m "sucessfully added"
+   15  git remote add origin "git@github.com:pyk1/Mygit.git"
+   16  git push origin master
+
+  
+            Git https
+       git config --global username "priyank3"
+   11  git config --global.username "priyank3"
+   12  git config --global user.name "priyank3"
+   13  git config --global user.email "priyank.otm@gmail.com"
+   14  git init repo1
+   15  git add README.md
+   16  echo "# repo1" >> README.md
+   17  git init
+   18  git add README.md
+   19  git commit -m "first commit"
+   20  git remote add origin https://github.com/priyank3/repo1.git
+   21  git push -u origin master
+
+
+
+             Git SSH
+        
+          1.cd ~/.ssh
+          2.ssh-keygen -t rsa -C "email.id"
+          3.press enter 3 times
+          4.ls -l
+
+          5.cat ~/.ssh/id_rsa.pub
+          6.you will code copy this & paste it in github>>settings>>ssh&ghs key gen
+
+          7.cd
+          8.mkdir <any name>
+          9.git init 
+         10.echo "# rhel1" >> README.md
+         11.git init
+         12.git add README.md
+         13.git commit -m "first commit"
+         14.git remote add origin git@github.com:priyank3/rhel1.git
+         15.git push -u origin master
+
+             after pushing refresh that sshkey it'll change colors from black to green.
+============================================================================================================================
+                  Creating a wordpress
+
+
+    1  yum update
+    2  yum install httpd
+    3  yum install php
+    4  yum install mysql
+    5  yum install mysql-server mysql
+    6  php --version
+    7  /etc/init.d/mysqld start
+    8  /etc/init.d/httpd start
+    
+9  mysql
+   10  create database wordpress;
+   11  grant all on wordpress.* to wordpressU@'localhost' identified by 'wordpress''
+   12  flush privileges;
+   13  exit 
+   
+14  /etc/init.d/httpd start
+   15  yum install wget
+   16  cd /var/www/html/
+   17  ll
+   
+    yum install wget
+18  wget https://wordpress.org/latest.tar.gz
+   19  tar xzf latest.tar.gz
+   20  ll
+   21  chown -R apache.apache wordpress/
+   22  vi /etc/httpd/conf/httpd.conf
+   
+23  cd
+   24  yum install php-mysql
+   25  sudo service httpd restart
+
+select English language
+user name:wordpressU
+password :wordpressP
+
+
+
+
+
